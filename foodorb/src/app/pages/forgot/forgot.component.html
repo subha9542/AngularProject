@@ -1,0 +1,22 @@
+<foodorb-includes-main></foodorb-includes-main>
+
+<div class="d-flex justify-content-center">
+  <div class="card m-3">
+    <h5 class="card-header">Forgot Password </h5>
+    <div class="card-body">
+      <form name="form" (ngSubmit)="f.form.valid && forgot()" #f="ngForm">
+        <div class="form-group">
+          <input type="text" name="email" placeholder="Email" class="form-control" [(ngModel)]="email_id" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email>
+          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email address e.g., john@example.com</div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-info mr-1" >Get Reset Link</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

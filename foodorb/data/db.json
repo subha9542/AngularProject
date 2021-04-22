@@ -1,0 +1,138 @@
+{
+  "feed": [
+    {
+      "name": "PizzaShop",
+      "desc": "",
+      "product": "Pizza",
+      "price": 12,
+      "rating": 4.6,
+      "imageUrl": "/assets/images/pizza.jpg",
+      "id": 1
+    },
+    {
+      "name": "Biryani Pot",
+      "desc": "",
+      "product": "Biryani",
+      "price": 10.5,
+      "rating": 4.5,
+      "imageUrl": "/assets/images/biryani.jpg",
+      "id": 2
+    },
+    {
+      "name": "WhataBurger",
+      "desc": "",
+      "product": "Chicken burger",
+      "price": 6,
+      "rating": 4.7,
+      "imageUrl": "/assets/images/burger.jpg",
+      "id": 3
+    },
+    {
+      "name": "PastaPlace",
+      "desc": "",
+      "product": "Pasta",
+      "price": 7,
+      "rating": 4.3,
+      "imageUrl": "/assets/images/pasta.jpg",
+      "id": 4
+    },
+    {
+      "name": "IndianPalace",
+      "desc": "",
+      "product": "ButterChicken",
+      "price": 12,
+      "rating": 4.9,
+      "imageUrl": "/assets/images/butterchicken.jpg",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "email": "example1@example.com",
+      "password": "$2a$10$/wkx3hykO.vUuShzPFVoy.Ryz1twuOec6cx9OLValLChIRHUb5KDC",
+      "name": "praveen",
+      "addresses": [
+        {
+          "name": "",
+          "address": "new york"
+        }
+      ],
+      "payments": [
+        {
+          "number": "456745457565457465",
+          "name": "visa"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "email": "s@gmail.com",
+      "password": "$2a$10$/wkx3hykO.vUuShzPFVoy.Ryz1twuOec6cx9OLValLChIRHUb5KDC",
+      "Name": "Subash",
+      "confirmPassword": "123456",
+      "id": 4,
+      "addresses": [
+        {
+          "name": "Subash US",
+          "address": "6803 Seco creek"
+        },
+        {
+          "name": "Subash India",
+          "address": "plot no 39, R C road"
+        }
+      ],
+      "payments": [
+        {
+          "name": "visa",
+          "addnumberress": "",
+          "number": "12345678990"
+        },
+        {
+          "name": "discover",
+          "addnumberress": "",
+          "number": "124578"
+        }
+      ],
+      "cart_items": [],
+      "orderTime": 0
+    },
+    {
+      "email": "subash@gmail.com",
+      "password": "$2a$10$y/3wBolCdvTRZud6b79UhOykCERB.ddAh5.7sET8rz1.n6FY0KcYy",
+      "Name": "Subash",
+      "confirmPassword": "123456",
+      "id": 5,
+      "addresses": [
+        {
+          "name": "Subash",
+          "address": "6803 seco crek apt 10201, San Antonio, TX"
+        },
+        {
+          "name": "Subash India",
+          "address": "plot no 39, R C road"
+        }
+      ],
+      "payments": [
+        {
+          "name": "Discoveer",
+          "addnumberress": "",
+          "number": "12245787845145451"
+        },
+        {
+          "name": "dsdfsdf",
+          "addnumberress": "",
+          "number": "3445454545656"
+        }
+      ],
+      "cart_items": [],
+      "orderTime": 0
+    },
+    {
+      "email": "subashsunku.ms19@gmail.com",
+      "password": "$2a$10$Ade1gzvxE9umYOxTChN/muUBEntwgX1FL3O8NaNJJUYoyMP.z4XJe",
+      "Name": "Subash Sunku",
+      "confirmPassword": "12345678",
+      "id": 6
+    }
+  ]
+}

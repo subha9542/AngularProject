@@ -1,0 +1,51 @@
+<foodorb-includes></foodorb-includes>
+
+<div *ngIf="!orderCancelled;else elseBlock">
+  <div class="offset-md-4 col-md-4">
+    <hr />
+    <div class="card card-block">
+      <img class="custom-image-style" img src="/assets/images/chef.jpg" height="250" width="250" style="margin-left: 60px;
+          margin-top: 10px">
+      <div>
+        <p style="margin-left: 60px"><strong>Order Details</strong></p>
+        <p style="margin-left: 60px">Your Order Placed Successfully</p>
+        <p style="margin-left: 60px"><strong>Order Status</strong></p>
+        <p style="margin-left: 60px"><strong><i>{{order_status}} </i></strong></p>
+        <p style="margin-left: 60px">Remaining Time</p>
+        <p style="margin-left: 60px"><i>{{time_remaining}} </i></p>
+        <p style="margin-left: 60px"><i>Your Food is being cooked, sit back and relax while our patner will deliver you the delicious and hot food at your doorstep.  </i></p>
+        <p style="margin-left: 60px">Order id : 458741</p>
+        <button class="btn btn-outline-danger " style=" margin-left: 60px;margin-bottom: 20px;" (click)="cancelOrder()">
+          Cancel Order
+        </button>
+      </div>
+
+    </div>
+    <div class="offset-md-4 col-md-4">
+      <hr />
+    </div>
+  </div>
+</div>
+<ng-template #elseBlock>
+  <div class="offset-md-4 col-md-4">
+    <hr />
+  </div>
+  <div class="container row mx-auto justify-content-center">
+    <div class="card card-block ">
+      <img class="custom-image-style" img src="/assets/images/sad_chef.jpg" height="250" width="250" style="    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 10px">
+      <hr />
+      <div class="text-center">
+        <h3>No Orders</h3>
+      </div>
+      <div>
+        <button class="btn btn-outline-primary " style=" margin-left: 20px;" (click)="goHome()">
+          Home
+        </button>
+      </div>
+
+    </div>
+  </div>
+  
+</ng-template>

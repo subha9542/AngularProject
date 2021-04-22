@@ -1,0 +1,153 @@
+<foodorb-includes></foodorb-includes>
+
+<div class="offset-md-4 col-md-4">
+  <hr />
+</div>
+<div class="d-flex  offset-md-4 col-md-4  justify-content-center">
+  <h3>Payment Options  and Address</h3>
+</div>
+<div class=" offset-md-4 col-md-4 ">
+  <hr />
+  <button class="btn btn-outline-primary btn-sm mr-4" (click)="paymentList()">
+    Payment List
+  </button>
+  <button class="btn btn-outline-primary btn-sm" (click)="addressList()">
+    Address List
+  </button>
+  <hr />
+</div>
+<div *ngIf="openAddressForm">
+  <div class="offset-md-4 col-md-4">
+    <table class="table table-center mx-auto w-75">
+      <thead class="table table-dark table-bordered">
+        <tr>
+          <th>Address</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="table table-striped">
+        <tr *ngFor="let address of addresses;index as i">
+          <td *ngIf="showEditAdd==false;else elseIDBlock">{{addresses[i].address}}</td>
+          <ng-template #elseIDBlock><td><input type="text" [(ngModel)]="addresses[i].address" name="address" #address="ngModel"/></td></ng-template>
+          <td *ngIf="showEditAdd==false;else elseButtonBlock"><button class="btn btn-primary btn-sm" (click)="EditAdd()">Edit</button></td>
+          <ng-template #elseButtonBlock><td><button class="btn btn-success btn-sm" (click)="UpdateAdd()">Update</button></td></ng-template>
+          <td><button class="btn btn-danger btn-sm" (click)="DeleteAdd(addresses[i].name)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card bg-secondary shadow">
+      <div class="card-header bg-white border-0">
+        <div class="row align-items-center">
+          <div class="col-6">
+            <h3 class="mb-0">Add Address</h3>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form>
+          <h6 class="heading-small text-muted mb-4">User information</h6>
+          <div class="pl-lg-4">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group focused">
+                  <h4>Name</h4>
+                  <input type="text" [(ngModel)]="addAddress.name" name="addname" #addname="ngModel" class="form-control form-control-alternative" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4">
+          <!-- Address -->
+          <div class="pl-lg-4">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group focused">
+                  <h4 class="form-control-label" for="address-address">Address</h4>
+                  <input [(ngModel)]="addAddress.address" name="addAddressadd" #addAddressadd="ngModel" class="form-control form-control-alternative" type="text" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4">
+          <div class="pl-lg-4">
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-info btn-sm" (click)="addAddressDB()">
+                  Add Address
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="openPaymentForm">
+  <div class="offset-md-4 col-md-4">
+    <table class="table table-center mx-auto w-75">
+      <thead class="table table-dark table-bordered">
+        <tr>
+          <th>Payment</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="table table-striped">
+        <tr *ngFor="let payment of payments;index as i">
+          <td *ngIf="showEditPayment==false;else elseIDPayBlock">{{payments[i].number}}</td>
+          <ng-template #elseIDPayBlock><td><input type="text" [(ngModel)]="payments[i].number" name="payment_card" #payment_card="ngModel" /></td></ng-template>
+          <td *ngIf="showEditPayment==false;else elseButtonPayBlock"><button class="btn btn-primary btn-sm" (click)="EditPay()">Edit</button></td>
+          <ng-template #elseButtonPayBlock><td><button class="btn btn-success btn-sm" (click)="UpdatePay()">Update</button></td></ng-template>
+          <td><button class="btn btn-danger btn-sm" (click)="DeletePay(payments[i].number)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card bg-secondary shadow">
+      <div class="card-header bg-white border-0">
+        <div class="row align-items-center">
+          <div class="col-6">
+            <h3 class="mb-0">Add Pay</h3>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form>
+          <h6 class="heading-small text-muted mb-4">User information</h6>
+          <div class="pl-lg-4">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group focused">
+                  <h4>Name</h4>
+                  <input type="text" [(ngModel)]="addPayment.name" name="addPayname" #addPayname="ngModel" class="form-control form-control-alternative" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4">
+          <!-- Address -->
+          <div class="pl-lg-4">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group focused">
+                  <h4 class="form-control-label" for="payment-number">Number</h4>
+                  <input [(ngModel)]="addPayment.number" name="addPaymentNumber" #addPaymentNumber="ngModel" class="form-control form-control-alternative" type="text" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4">
+          <div class="pl-lg-4">
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-info btn-sm" (click)="addPaymentDB()">
+                  Add Payment
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

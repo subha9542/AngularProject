@@ -1,0 +1,46 @@
+<!-- main app container -->
+  <foodorb-includes-main></foodorb-includes-main>
+<div class="d-flex justify-content-center">
+  <div class="card m-3">
+    <h5 class="card-header">Registration </h5>
+    <div class="card-body">
+      <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" [mustMatch]="['password', 'confirmPassword']">
+        <div class="form-group">
+          <input type="text" name="Name" placeholder="Full Name" class="form-control" [(ngModel)]="model.Name" #Name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Name.invalid }" required>
+          <div *ngIf="f.submitted && Name.invalid" class="invalid-feedback">
+            <div *ngIf="Name.errors.required">Full Name is required and must be valid name</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" name="email" placeholder="Email" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email>
+          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email address e.g., john@example.com</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Password" name="password" class="form-control" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6">
+          <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Confirm Password" name="confirmPassword" class="form-control" [(ngModel)]="model.confirmPassword" #confirmPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && confirmPassword.invalid }" required>
+          <div *ngIf="f.submitted && confirmPassword.invalid" class="invalid-feedback">
+            <div *ngIf="confirmPassword.errors.required">Confirm Password is required</div>
+            <div *ngIf="confirmPassword.errors.mustMatch">Passwords mis-match</div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary mr-1" >Register</button>
+        </div>
+      </form>
+      <div class="text-center">
+        <p>Already a member?</p>
+      <button class="btn btn-primary mr-1" (click)="loginPage()">Login</button>
+        </div>
+    </div>
+  </div>
+
+</div>
